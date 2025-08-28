@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Box Model Demonstration</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Box Model & Styling Fundamentals</h1>
+        <p>Understanding how CSS works with HTML elements</p>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="#box-model">Box Model</a></li>
+            <li><a href="#text-styling">Text Styling</a></li>
+            <li><a href="#backgrounds">Backgrounds</a></li>
+            <li><a href="#layout">Layout</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <section id="box-model" class="content-section">
+            <h2>The CSS Box Model</h2>
+            <p>Every element in web design is a rectangular box. The CSS box model describes how these boxes are sized and spaced.</p>
+            
+            <div class="box-model-demo">
+                <div class="box-content">Content
+                    <div class="box-padding">Padding
+                        <div class="box-border">Border
+                            <div class="box-margin">Margin</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="box-controls">
+                <div class="control-group">
+                    <label for="margin-control">Margin: 20px</label>
+                    <input type="range" id="margin-control" min="0" max="50" value="20">
+                </div>
+                <div class="control-group">
+                    <label for="padding-control">Padding: 20px</label>
+                    <input type="range" id="padding-control" min="0" max="50" value="20">
+                </div>
+                <div class="control-group">
+                    <label for="border-control">Border: 5px</label>
+                    <input type="range" id="border-control" min="0" max="20" value="5">
+                </div>
+            </div>
+        </section>
+        
+        <section id="text-styling" class="content-section">
+            <h2>Text Styling Examples</h2>
+            
+            <div class="text-examples">
+                <div class="text-sample">
+                    <h3>Headings</h3>
+                    <h1>Heading 1</h1>
+                    <h2>Heading 2</h2>
+                    <h3>Heading 3</h3>
+                    <h4>Heading 4</h4>
+                </div>
+                
+                <div class="text-sample">
+                    <h3>Paragraph Styling</h3>
+                    <p>This is a regular paragraph with some <strong>bold text</strong> and <em>italic text</em>. You can also see <span class="highlight">highlighted text</span> and <a href="#">a text link</a>.</p>
+                    
+                    <p class="font-example">This paragraph uses a different font family to demonstrate font styling capabilities in CSS.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section id="backgrounds" class="content-section">
+            <h2>Background Styling</h2>
+            
+            <div class="background-examples">
+                <div class="bg-sample solid">
+                    <h3>Solid Color</h3>
+                </div>
+                
+                <div class="bg-sample gradient">
+                    <h3>Gradient</h3>
+                </div>
+                
+                <div class="bg-sample image">
+                    <h3>Background Image</h3>
+                </div>
+            </div>
+        </section>
+        
+        <section id="layout" class="content-section">
+            <h2>Layout Examples</h2>
+            
+            <div class="card-container">
+                <div class="card">
+                    <h3>Card 1</h3>
+                    <p>This is a simple card component with shadow effects and rounded corners.</p>
+                    <button>Learn More</button>
+                </div>
+                
+                <div class="card">
+                    <h3>Card 2</h3>
+                    <p>Cards are great for presenting related information in a contained format.</p>
+                    <button>Learn More</button>
+                </div>
+                
+                <div class="card">
+                    <h3>Card 3</h3>
+                    <p>Notice how margins and padding create comfortable spacing between elements.</p>
+                    <button>Learn More</button>
+                </div>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>CSS Box Model Demonstration &copy; 2023</p>
+    </footer>
+
+    <script>
+        // Simple JavaScript to demonstrate box model changes
+        document.getElementById('margin-control').addEventListener('input', function(e) {
+            document.querySelector('.box-model-demo').style.margin = e.target.value + 'px';
+            e.target.previousElementSibling.textContent = 'Margin: ' + e.target.value + 'px';
+        });
+        
+        document.getElementById('padding-control').addEventListener('input', function(e) {
+            document.querySelector('.box-content').style.padding = e.target.value + 'px';
+            e.target.previousElementSibling.textContent = 'Padding: ' + e.target.value + 'px';
+        });
+        
+        document.getElementById('border-control').addEventListener('input', function(e) {
+            document.querySelector('.box-border').style.borderWidth = e.target.value + 'px';
+            e.target.previousElementSibling.textContent = 'Border: ' + e.target.value + 'px';
+        });
+    </script>
+</body>
+</html>
